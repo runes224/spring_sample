@@ -28,6 +28,7 @@ public class SignupController {
   
   @PostMapping("/signup")
   public String postSignUp(Model model) {
+    System.out.println("test");
     return "redirect:/login";
   }
 
