@@ -27,6 +27,7 @@ public class SignupController {
   public String getSignup(@ModelAttribute SignupForm form, Model model) {
     radioMarriage = initRadioMarriage();
     model.addAttribute("radioMarriage", radioMarriage);
+    System.out.println("test");
     return "login/signup";
   }
 
