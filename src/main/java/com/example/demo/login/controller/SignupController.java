@@ -28,6 +28,7 @@ public class SignupController {
     radioMarriage = initRadioMarriage();
     model.addAttribute("radioMarriage", radioMarriage);
     System.out.println("test");
+    System.out.println("test");
     return "login/signup";
   }
 
