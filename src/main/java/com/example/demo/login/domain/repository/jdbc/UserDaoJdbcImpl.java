@@ -1,4 +1,4 @@
-package com.example.demo.login.domain.repository;
+package com.example.demo.login.domain.repository.jdbc;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,8 +11,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.login.domain.model.User;
+import com.example.demo.login.domain.repository.UserDao;
 
-@Repository
+@Repository("UserDaoJdbcImpl")
 public class UserDaoJdbcImpl implements UserDao {
 
   @Autowired
@@ -98,6 +99,13 @@ public class UserDaoJdbcImpl implements UserDao {
     int rowNumber = jdbc.update("DELETE FROM m_user WHERE user_id=?",userId);
     return rowNumber;
   };
+  
+  @Override
+  public void userCsvOut() throws DataAccessException {
+    String sql = "SELECT * FROM m_user";
+    UserRowCallbackHandler handler = new UserRowCallbackHandler();
+    jdbc.query(sql, handler);
+  }
 
   @Override
   public void userService() throws DataAccessException {
