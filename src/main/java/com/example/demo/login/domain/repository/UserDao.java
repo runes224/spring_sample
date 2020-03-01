@@ -19,5 +19,7 @@ public interface UserDao {
 
   public int deleteOne(String userId) throws DataAccessException;
 
+  public void userCsvOut() throws DataAccessException;
+
   public void userService() throws DataAccessException;
 }
