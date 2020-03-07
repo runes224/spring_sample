@@ -90,6 +90,12 @@ public class UserDaoJdbcImpl implements UserDao {
         ,user.getAge()
         ,user.isMarriage()
         ,user.getUserId());
+    
+//    if(rowNumber>0) {
+//      throw new DataAccessException("トランザクションテスト") {
+//        private static final long serialVersionUID = 1L;};
+//    }
+    
       return rowNumber;
     
   };
